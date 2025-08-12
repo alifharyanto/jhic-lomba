@@ -1,0 +1,360 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        SMK Wira Buana2
+    </title>
+    <link href="logowb2.png" rel="icon" type="image/png" />
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+        }
+
+        .btn-spmb {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 2px solid #2563eb;
+            /* blue-600 */
+            color: white;
+            font-weight: 600;
+            border-radius: 9999px;
+            /* rounded */
+            background-color: #2563eb;
+            cursor: pointer;
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.5rem;
+            /* 10 */
+        }
+
+        .btn-spmb:hover {
+            background-color: transparent;
+            color: #2563eb;
+        }
+
+        header {
+            backdrop-filter: blur(35px);
+            background-color: rgba(255, 255, 255, 0);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            z-index: 50;
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom CSS for Login button */
+        .btn-login {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            font-weight: 600;
+            border-radius: 9999px;
+            background-color: transparent;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-login i {
+            margin-right: 0.5rem;
+        }
+
+        .btn-login:hover {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        /* Custom CSS for Selengkapnya button */
+        .btn-selengkapnya {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            font-weight: 600;
+            border-radius: 9999px;
+            background-color: transparent;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-selengkapnya:hover {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        /* Centered text overlay on image */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: blur(6px);
+            transform: scale(1.05);
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            color: white;
+            text-align: center;
+            max-width: 90%;
+            padding: 0 1rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+            z-index: 10;
+        }
+
+        .hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-text p {
+            font-weight: 400;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        @media (min-width: 768px) {
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.25rem;
+            }
+        }
+
+        .video-welcome-section {
+            width: 100vw;
+            min-height: 100vh;
+            background: linear-gradient(to right, #001f3f, #003366);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 500px) {
+            .video-welcome-section {
+                flex-direction: row;
+                gap: 2rem;
+                align-items: flex-start;
+                width: 100vw;
+                margin: 0;
+            }
+
+            .video-container {
+                flex: 0 0 35%;
+                /* Lebar 35% */
+                position: relative;
+                padding-bottom: 75%;
+                /* Aspect ratio 4:3 */
+                height: 0;
+                /* Penting untuk teknik aspect ratio */
+                overflow: hidden;
+                border-radius: 0.5rem;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                /* Shadow lebih ringan dan kecil */
+            }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+
+            .welcome-text {
+                flex: 1;
+                max-width: 60%;
+                font-weight: 400;
+                font-size: 1.25rem;
+                line-height: 1.6;
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+
+        .welcome-text h2 {
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .welcome-text p {
+            margin-top: 0;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <header class="fixed top-0 left-0 w-full shadow-none">
+        <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20 max-w-[1180px] mx-auto w-full">
+            <!-- Left side: Logo and text -->
+            <div class="flex items-center space-x-3">
+                <img alt="School logo, square 65 by 65 pixels, blue background with white text 'Logo'"
+                    class="flex-shrink-0" height="65" src="logowb2.png" width="65" />
+                <div class="leading-tight">
+                    <h1 class="text-xl font-bold text-gray-900">
+                        SMK
+                    </h1>
+                    <p class="text-sm font-semibold text-gray-600 -mt-1">
+                        WIRA BUANA2
+                    </p>
+                </div>
+            </div>
+            <!-- Center: Navigation tabs -->
+            <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
+                    Home
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
+                    About
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
+                    Guest Teacher
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
+                    Alumni
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
+                    Activity
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
+                    Contact
+                </a>
+            </nav>
+            <!-- Right side: Login button and SPMB button -->
+            <div class="flex items-center space-x-4">
+                <button class="btn-login hidden md:inline-flex" type="button">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </button>
+                <button class="btn-spmb hidden md:inline-block" type="button">
+                    SPMB
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden border-t border-gray-200">
+            <nav class="flex justify-around py-3 text-gray-700 font-semibold">
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
+                    Home
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
+                    About
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
+                    Guest Teacher
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
+                    Alumni
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
+                    Activity
+                </a>
+                <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
+                    Contact
+                </a>
+                <button
+                    class="ml-2 px-3 py-1 border border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-600 hover:text-white transition"
+                    type="button">
+                    <i class="fas fa-sign-in-alt mr-1">
+                    </i>
+                    Login
+                </button>
+                <button
+                    class="ml-2 px-6 py-1 border border-blue-600 text-white font-semibold rounded bg-blue-600 hover:bg-transparent hover:text-blue-600 transition"
+                    type="button">
+                    SPMB
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main class="flex-grow w-full mx-auto px-0 py-0 pt-35">
+        <section id="home" class="hero-section">
+            <img alt="Full width and height photo of a modern school building with clear blue sky and green trees around"
+                src="FOTOWB2.jpg" />
+            <div class="hero-text">
+                <h1>
+                    SEKOLAH TERBAIK
+                </h1>
+                <p>
+                    Sekolah unggulan yang berfokus pada pendidikan karakter akademik dan teknologi
+                </p>
+                <button class="btn-selengkapnya" type="button">
+                    Selengkapnya
+                </button>
+            </div>
+        </section>
+        <section class="video-welcome-section" aria-label="Video and welcome message">
+            <div class="video-container">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen frameborder="0"
+                        title="YouTube video player">
+                    </iframe>
+                </div>
+
+
+            </div>
+            <div class="welcome-text">
+                <h2>Selamat datang di website sekolah Wira Buana 2</h2>
+                <p>- SMK WIRA BUANA 2 adalah sekolah unggulan yang telah berdiri sejak tahun 2008 dengan latar belakang
+                </p>
+            </div>
+        </section>
+    </main>
+    <script>
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
