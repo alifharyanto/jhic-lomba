@@ -1,359 +1,1401 @@
 <html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   SMK Wira Buana2
+  </title>
+  <link href="logowb2.png" rel="icon" type="image/png"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Montserrat:wght@600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9fafb;
+    }
 
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>
-        SMK Wira Buana2
-    </title>
-    <link href="logowb2.png" rel="icon" type="image/png" />
-    <script src="https://cdn.tailwindcss.com">
-    </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap"
-        rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9fafb;
+    .btn-spmb {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border: 2px solid #2563eb;
+      color: white;
+      font-weight: 600;
+      border-radius: 9999px;
+      background-color: #2563eb;
+      cursor: pointer;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.875rem;
+    }
+
+    .btn-spmb:hover {
+      background-color: transparent;
+      color: #2563eb;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      backdrop-filter: blur(20px);
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      z-index: 50;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .btn-login {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.4rem 0.9rem;
+      border: 2px solid #2563eb;
+      color: #2563eb;
+      font-weight: 600;
+      border-radius: 9999px;
+      background-color: transparent;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: "Roboto", sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .btn-login i {
+      margin-right: 0.4rem;
+      font-size: 1rem;
+    }
+
+    .btn-login:hover {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .btn-selengkapnya {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 1rem;
+      border: 2px solid #2563eb;
+      color: #2563eb;
+      font-weight: 600;
+      border-radius: 9999px;
+      background-color: transparent;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+    }
+
+    .btn-selengkapnya:hover {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: blur(6px);
+      transform: scale(1.05);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      color: white;
+      text-align: center;
+      max-width: 90%;
+      padding: 0 1rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+      z-index: 10;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .hero-text h1 {
+      font-weight: 700;
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+    }
+
+    .hero-text p {
+      font-weight: 400;
+      font-size: 1.125rem;
+      line-height: 1.5;
+      margin-bottom: 1.75rem;
+      font-style: italic;
+    }
+
+    @media (min-width: 768px) {
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+
+      .hero-text p {
+        font-size: 1.25rem;
+      }
+    }
+
+    .video-welcome-section {
+      width: 100vw;
+      min-height: 100vh;
+      background-color: white;
+      color: #001f3f;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      margin: 0;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      font-family: "Roboto", sans-serif;
+      position: relative;
+    }
+
+    @media (min-width: 500px) {
+      .video-welcome-section {
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+        width: 100vw;
+        margin: 0;
+        justify-content: flex-start;
+      }
+
+      .video-container {
+        flex: 0 0 auto;
+        width: 320px;
+        height: 180px;
+        position: relative;
+        overflow: visible;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        padding: 6px; /* white gap around box */
+      }
+
+      /* White shape overlay top-left corner to create inward curve matching blue box bottom-right */
+      .video-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 72px;
+        height: 72px;
+        background-color: white;
+        z-index: 20;
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% 100%,
+          0 100%,
+          0 72%,
+          72% 0
+        );
+        border-top-left-radius: 0.5rem;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 308px;
+        height: 168px;
+        border: 0;
+        border-radius: 0.5rem;
+        box-sizing: content-box;
+        z-index: 30;
+      }
+
+      .video-box {
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        background-color: #2563eb;
+        border-radius: 0.5rem;
+        width: 72px;
+        height: 72px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgb(37 99 235 / 0.5);
+        font-family: "Roboto", sans-serif;
+        user-select: none;
+        z-index: 40;
+        padding: 0.3rem 0.25rem 0.4rem 0.25rem;
+        text-align: center;
+      }
+
+      .video-box i {
+        font-size: 1.3rem;
+        margin-bottom: 0.2rem;
+        line-height: 1;
+      }
+
+      .video-box span {
+        font-size: 0.65rem;
+        font-weight: 600;
+        line-height: 1.1;
+        user-select: text;
+        white-space: normal;
+        display: block;
+      }
+
+      .welcome-text {
+        flex: 1;
+        max-width: 60%;
+        color: #001f3f;
+        text-align: left;
+      }
+    }
+
+    .welcome-text h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+      text-align: left;
+      color: #001f3f;
+      line-height: 1.2;
+    }
+
+    .welcome-text h3 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+      text-align: left;
+      color: #001f3f;
+      line-height: 1.2;
+    }
+
+    .welcome-text p {
+      margin-top: 0;
+      font-style: normal;
+      text-align: left;
+      color: #001f3f;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Visitor stats section - styled like FAQ box with blue background and white text */
+    .visitor-stats-section {
+      background-color: #2563eb;
+      padding: 3rem 1rem 4rem;
+      display: flex;
+      justify-content: center;
+      font-family: "Roboto", sans-serif;
+      margin: 3rem auto 2rem;
+      max-width: 1180px;
+      box-sizing: border-box;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgb(37 99 235 / 0.4);
+      color: white;
+    }
+
+    .visitor-stats-box {
+      max-width: 700px;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    .visitor-stats-title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.05em;
+      color: white;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      max-width: 140px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stat-number {
+      font-weight: 700;
+      font-size: 2rem;
+      font-family: "Montserrat", sans-serif;
+      user-select: none;
+      line-height: 1;
+      color: white;
+    }
+
+    .stat-label {
+      font-weight: 600;
+      font-size: 1rem;
+      user-select: none;
+      color: white;
+      text-align: center;
+    }
+
+    /* Keunggulan Sekolah section */
+    .keunggulan-section {
+      max-width: 1180px;
+      margin: 2rem auto 6rem;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      font-family: "Roboto", sans-serif;
+    }
+
+    @media (min-width: 768px) {
+      .keunggulan-section {
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+      }
+    }
+
+    .keunggulan-text {
+      flex: 1;
+      color: #001f3f;
+    }
+
+    .keunggulan-text h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .keunggulan-text h3 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .keunggulan-icons {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 400px;
+    }
+
+    .keunggulan-icon {
+      flex: 1 1 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #2563eb;
+      cursor: default;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    .keunggulan-icon:hover {
+      color: #1e40af;
+    }
+
+    .keunggulan-icon i {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .keunggulan-icon span {
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    /* Slider container horizontal with arrow */
+    .keunggulan-slider-container {
+      flex: 1;
+      max-width: 360px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      position: relative;
+      user-select: none;
+    }
+
+    .keunggulan-slider {
+      flex: 1;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgb(37 99 235 / 0.3);
+      max-width: 280px;
+      height: 180px;
+      position: relative;
+    }
+
+    .keunggulan-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      pointer-events: none;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      opacity: 0;
+      transition: left 0.5s ease, opacity 0.5s ease;
+    }
+
+    .keunggulan-slider img.active {
+      left: 0;
+      opacity: 1;
+      position: relative;
+    }
+
+    /* Arrow button on right side */
+    .slider-arrow-button {
+      background-color: #2563eb;
+      border: none;
+      border-radius: 9999px;
+      width: 36px;
+      height: 36px;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgb(37 99 235 / 0.5);
+      transition: background-color 0.3s ease;
+    }
+
+    .slider-arrow-button:hover,
+    .slider-arrow-button:focus-visible {
+      background-color: #1e40af;
+      outline: none;
+    }
+
+    @media (max-width: 767px) {
+      .keunggulan-slider-container {
+        max-width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* FAQ Section Styles */
+    .faq-section {
+      background-color: #2563eb;
+      color: white;
+      padding: 3rem 1rem 4rem;
+      font-family: "Roboto", sans-serif;
+      max-width: 1180px;
+      margin: 0 auto 4rem;
+      border-radius: 1rem;
+      box-sizing: border-box;
+    }
+
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .faq-container {
+        flex-direction: row;
+        gap: 4rem;
+      }
+    }
+
+    .faq-text {
+      flex: 1;
+      max-width: 480px;
+      margin-top: 4.5rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .faq-text h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    .faq-text p {
+      font-weight: 400;
+      font-size: 1.125rem;
+      line-height: 1.5;
+      margin-top: 0;
+      color: #dbeafe; /* lighter blue for contrast */
+    }
+
+    .faq-box {
+      flex: 1;
+      background-color: white;
+      border-radius: 1rem;
+      padding: 1.5rem 1rem 1.5rem 1rem;
+      box-sizing: border-box;
+      max-width: 520px;
+      box-shadow: 0 8px 20px rgb(37 99 235 / 0.4);
+      color: #1e40af;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .faq-item {
+      background-color: #2563eb;
+      color: white;
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgb(37 99 235 / 0.5);
+      justify-content: space-between;
+    }
+
+    .faq-item:hover,
+    .faq-item:focus {
+      background-color: transparent;
+      color: #2563eb;
+      border: 2px solid white;
+      outline: none;
+    }
+
+    .faq-item i,
+    .faq-item .faq-icon {
+      flex-shrink: 0;
+      font-size: 1.25rem;
+      color: white;
+      transition: color 0.3s ease;
+      order: 2;
+      user-select: none;
+    }
+
+    .faq-item:hover i,
+    .faq-item:focus i,
+    .faq-item:hover .faq-icon,
+    .faq-item:focus .faq-icon {
+      color: #2563eb;
+    }
+
+    .faq-answer {
+      background-color: #e0e7ff;
+      color: #1e40af;
+      border-radius: 0.75rem;
+      padding: 0 1.25rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-top: 0;
+      user-select: text;
+      box-shadow: 0 4px 12px rgb(37 99 235 / 0.3);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-answer.active {
+      max-height: 500px;
+      opacity: 1;
+      padding: 1rem 1.25rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Alumni Section Styles */
+    .alumni-section {
+      position: relative;
+      width: 100%;
+      max-width: 1180px;
+      margin: 4rem auto 6rem;
+      padding: 2rem 3rem 3rem;
+      background-color: #e0e7ff;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgb(37 99 235 / 0.3);
+      overflow: visible;
+      color: #1e40af;
+      font-family: "Roboto", sans-serif;
+      z-index: 10;
+      box-sizing: border-box;
+    }
+
+    .alumni-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .alumni-header h2 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      color: #2563eb;
+    }
+
+    .alumni-header p {
+      font-weight: 400;
+      font-size: 1.125rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #3b82f6;
+      font-style: italic;
+    }
+
+    .alumni-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      position: relative;
+      z-index: 10;
+      align-items: center;
+    }
+
+    .alumni-card {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 6px 15px rgb(37 99 235 / 0.3);
+      padding: 1.75rem 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: #1e40af;
+      position: relative;
+      transition: transform 0.3s ease;
+      width: 100%;
+      max-width: 720px;
+      box-sizing: border-box;
+    }
+
+    .alumni-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgb(37 99 235 / 0.5);
+    }
+
+    .alumni-name {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #1e40af;
+    }
+
+    .alumni-role {
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: #3b82f6;
+      margin-bottom: 0.75rem;
+    }
+
+    .alumni-message {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #1e40af;
+      white-space: pre-line;
+    }
+
+    @media (max-width: 768px) {
+      .alumni-section {
+        margin: 3rem 1rem 5rem;
+        padding: 1.5rem 1.5rem 2.5rem;
+      }
+      .alumni-header p {
+        max-width: 100%;
+      }
+      .alumni-card {
+        max-width: 100%;
+        padding: 1.5rem 1.5rem 2rem;
+      }
+    }
+
+    /* Floating icons */
+    .floating-icon {
+      position: absolute;
+      background-color: #2563eb;
+      border-radius: 9999px;
+      box-shadow: 0 4px 15px rgb(37 99 235 / 0.5);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      cursor: default;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      z-index: 0;
+    }
+
+    /* Left side floating icons */
+    .icon-left-1 {
+      width: 60px;
+      height: 60px;
+      top: 15%;
+      left: -30px;
+      animation-name: floatUpDownA;
+      animation-duration: 6s;
+      font-size: 28px;
+    }
+
+    .icon-left-2 {
+      width: 50px;
+      height: 50px;
+      top: 45%;
+      left: -25px;
+      animation-name: floatUpDownB;
+      animation-duration: 8s;
+      font-size: 22px;
+    }
+
+    .icon-left-3 {
+      width: 70px;
+      height: 70px;
+      top: 75%;
+      left: -35px;
+      animation-name: floatUpDownC;
+      animation-duration: 7s;
+      font-size: 32px;
+    }
+
+    /* Right side floating icons */
+    .icon-right-1 {
+      width: 60px;
+      height: 60px;
+      top: 20%;
+      right: -30px;
+      animation-name: floatUpDownC;
+      animation-duration: 7s;
+      font-size: 28px;
+    }
+
+    .icon-right-2 {
+      width: 50px;
+      height: 50px;
+      top: 50%;
+      right: -25px;
+      animation-name: floatUpDownA;
+      animation-duration: 6s;
+      font-size: 22px;
+    }
+
+    .icon-right-3 {
+      width: 70px;
+      height: 70px;
+      top: 80%;
+      right: -35px;
+      animation-name: floatUpDownB;
+      animation-duration: 8s;
+      font-size: 32px;
+    }
+
+    @keyframes floatUpDownA {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+      }
+    }
+
+    @keyframes floatUpDownB {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateY(-15px) translateX(-10px);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+      }
+    }
+
+    @keyframes floatUpDownC {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateY(-25px) translateX(5px);
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+      }
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <header>
+   <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20 max-w-[1180px] mx-auto w-full">
+    <div class="flex items-center space-x-3">
+     <img alt="School logo, square 65 by 65 pixels, blue background with white text 'Logo'" class="flex-shrink-0" height="65" src="logowb2.png" width="65"/>
+     <div class="leading-tight">
+      <h1 class="text-xl font-bold text-gray-900">
+       SMK
+      </h1>
+      <p class="text-sm font-semibold text-gray-600 -mt-1">
+       WIRA BUANA2
+      </p>
+     </div>
+    </div>
+    <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
+      Home
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
+      About
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
+      Guest
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#teacher">
+      Teacher
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
+      Alumni
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
+      Activity
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
+      Contact
+     </a>
+    </nav>
+    <div class="flex items-center space-x-4">
+     <button class="btn-login hidden md:inline-flex" type="button">
+      <i class="fas fa-sign-in-alt">
+      </i>
+      Login
+     </button>
+     <button class="btn-spmb hidden md:inline-block" type="button">
+      SPMB
+     </button>
+    </div>
+   </div>
+   <div class="md:hidden border-t border-gray-200">
+    <nav class="flex flex-wrap justify-around py-3 text-gray-700 font-semibold gap-2">
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
+      Home
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
+      About
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
+      Guest
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#teacher">
+      Teacher
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
+      Alumni
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
+      Activity
+     </a>
+     <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
+      Contact
+     </a>
+     <button class="ml-2 px-3 py-1 border border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-600 hover:text-white transition flex items-center" type="button">
+      <i class="fas fa-sign-in-alt mr-1">
+      </i>
+      Login
+     </button>
+     <button class="ml-2 px-6 py-1 border border-blue-600 text-white font-semibold rounded bg-blue-600 hover:bg-transparent hover:text-blue-600 transition" type="button">
+      SPMB
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main class="flex-grow w-full mx-auto px-0 py-0 pt-25">
+   <section class="hero-section" id="home">
+    <img alt="Full width and height photo of a modern school building with clear blue sky and green trees around" src="FOTOWB2.jpg"/>
+    <div class="hero-text">
+     <h1>
+      SEKOLAH TERBAIK
+     </h1>
+     <p>
+      Sekolah unggulan yang berfokus pada pendidikan karakter akademik dan teknologi
+     </p>
+     <button class="btn-selengkapnya" type="button">
+      Selengkapnya
+     </button>
+    </div>
+   </section>
+   <section aria-label="Video and welcome message" class="video-welcome-section">
+    <div class="video-container">
+     <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player">
+     </iframe>
+     <div aria-labelledby="box-title" class="video-box" role="region">
+      <i aria-hidden="true" class="fas fa-users">
+      </i>
+      <span id="box-title">
+       Tentang
+       <br/>
+       Sekolah Kami
+      </span>
+     </div>
+    </div>
+    <div class="welcome-text">
+     <h2>
+      Selamat Datang di Website
+     </h2>
+     <h3>
+      Sekolah WiraBuana 2
+     </h3>
+     <p>
+      SMK WiraBuana 2 adalah sekolah unggulan yang telah berdiri sejak tahun 2008 dengan latar
+      belakang pendidikan karakter dan teknologi yang kuat, berkomitmen untuk mencetak generasi
+      masa depan yang berprestasi dan berintegritas tinggi.
+     </p>
+    </div>
+   </section>
+   <section aria-label="Jumlah Pengunjung Website Sekolah Kami" class="visitor-stats-section">
+    <div class="visitor-stats-box">
+     <h2 class="visitor-stats-title">
+      Jumlah Pengunjung Website Sekolah Kami
+     </h2>
+     <div class="stats-grid" role="list">
+      <div aria-label="Total Pengunjung" class="stat-item" role="listitem">
+       <div aria-atomic="true" aria-live="polite" class="stat-number" id="totalVisitors">
+        0
+       </div>
+       <div class="stat-label">
+        Total Pengunjung
+       </div>
+      </div>
+      <div aria-label="Pengunjung Tahun Ini" class="stat-item" role="listitem">
+       <div aria-atomic="true" aria-live="polite" class="stat-number" id="yearVisitors">
+        0
+       </div>
+       <div class="stat-label">
+        Tahun Ini
+       </div>
+      </div>
+      <div aria-label="Pengunjung Bulan Ini" class="stat-item" role="listitem">
+       <div aria-atomic="true" aria-live="polite" class="stat-number" id="monthVisitors">
+        0
+       </div>
+       <div class="stat-label">
+        Bulan Ini
+       </div>
+      </div>
+      <div aria-label="Pengunjung Hari Ini" class="stat-item" role="listitem">
+       <div aria-atomic="true" aria-live="polite" class="stat-number" id="dayVisitors">
+        0
+       </div>
+       <div class="stat-label">
+        Hari Ini
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section aria-label="Keunggulan Sekolah Kami" class="keunggulan-section">
+    <div class="keunggulan-text">
+     <h2>
+      Beberapa Keunggulan Pada
+     </h2>
+     <h2>
+      Sekolah Kami
+     </h2>
+     <div class="keunggulan-icons" role="list">
+      <div aria-label="Fasilitas Lengkap" class="keunggulan-icon" role="listitem" tabindex="0">
+       <i aria-hidden="true" class="fas fa-school">
+       </i>
+       <span>
+        Fasilitas Lengkap
+       </span>
+      </div>
+      <div aria-label="Pengajar Profesional" class="keunggulan-icon" role="listitem" tabindex="0">
+       <i aria-hidden="true" class="fas fa-chalkboard-teacher">
+       </i>
+       <span>
+        Pengajar Profesional
+       </span>
+      </div>
+      <div aria-label="Teknologi Modern" class="keunggulan-icon" role="listitem" tabindex="0">
+       <i aria-hidden="true" class="fas fa-laptop-code">
+       </i>
+       <span>
+        Teknologi Modern
+       </span>
+      </div>
+      <div aria-label="Lingkungan Nyaman" class="keunggulan-icon" role="listitem" tabindex="0">
+       <i aria-hidden="true" class="fas fa-tree">
+       </i>
+       <span>
+        Lingkungan Nyaman
+       </span>
+      </div>
+     </div>
+    </div>
+    <div aria-label="Foto Fasilitas Sekolah" class="keunggulan-slider-container" role="region">
+     <div aria-atomic="true" aria-live="polite" class="keunggulan-slider">
+      <img alt="Foto fasilitas sekolah berupa ruang kelas modern dengan meja dan kursi rapi, pencahayaan alami, dan dekorasi edukatif" class="slider-image active" id="slide1" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+1&amp;bg=2563eb&amp;fg=ffffff"/>
+      <img alt="Foto fasilitas sekolah berupa laboratorium komputer dengan deretan komputer modern dan kursi ergonomis" class="slider-image" id="slide2" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+2&amp;bg=1e40af&amp;fg=ffffff"/>
+      <img alt="Foto fasilitas sekolah berupa perpustakaan dengan rak buku lengkap dan area baca nyaman" class="slider-image" id="slide3" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+3&amp;bg=1e3a8a&amp;fg=ffffff"/>
+      <img alt="Foto fasilitas sekolah berupa lapangan olahraga luas dengan rumput hijau dan fasilitas olahraga lengkap" class="slider-image" id="slide4" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+4&amp;bg=2563eb&amp;fg=ffffff"/>
+      <img alt="Foto fasilitas sekolah berupa ruang seni dengan lukisan dan alat musik" class="slider-image" id="slide5" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+5&amp;bg=1e40af&amp;fg=ffffff"/>
+      <img alt="Foto fasilitas sekolah berupa ruang komputer dengan perangkat modern dan kursi ergonomis" class="slider-image" id="slide6" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+6&amp;bg=1e3a8a&amp;fg=ffffff"/>
+     </div>
+     <button aria-label="Next slide" class="slider-arrow-button" id="nextSlideBtn" title="Next Slide" type="button">
+      &gt;
+     </button>
+    </div>
+   </section>
+   <section aria-label="Frequently Asked Questions" class="faq-section" id="about">
+    <div class="faq-container">
+     <div class="faq-text">
+      <h2>
+       Frequently Asked Questions
+      </h2>
+      <p>
+       Temukan jawaban atas pertanyaan umum tentang SMK Wira Buana2 dan layanan kami.
+      </p>
+     </div>
+     <div class="faq-box" role="list">
+      <button aria-controls="faq1" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
+       Apa jurusan yang tersedia di SMK Wira Buana2?
+       <span aria-hidden="true" class="faq-icon">
+        ◉
+       </span>
+      </button>
+      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq1" role="region">
+       SMK Wira Buana2 menawarkan jurusan Teknik Komputer dan Jaringan, Multimedia, dan Rekayasa Perangkat Lunak.
+      </div>
+      <button aria-controls="faq2" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
+       Bagaimana proses pendaftaran siswa baru?
+       <span aria-hidden="true" class="faq-icon">
+        ◉
+       </span>
+      </button>
+      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq2" role="region">
+       Pendaftaran siswa baru dapat dilakukan secara online melalui website resmi kami atau langsung ke sekolah.
+      </div>
+      <button aria-controls="faq3" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
+       Apakah ada beasiswa untuk siswa berprestasi?
+       <span aria-hidden="true" class="faq-icon">
+        ◉
+       </span>
+      </button>
+      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq3" role="region">
+       Ya, kami menyediakan beasiswa bagi siswa berprestasi akademik dan non-akademik.
+      </div>
+      <button aria-controls="faq4" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
+       Apa fasilitas yang tersedia di sekolah?
+       <span aria-hidden="true" class="faq-icon">
+        ◉
+       </span>
+      </button>
+      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq4" role="region">
+       Fasilitas kami meliputi laboratorium komputer, perpustakaan, ruang multimedia, lapangan olahraga, dan ruang seni.
+      </div>
+      <button aria-controls="faq5" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
+       Bagaimana dengan kegiatan ekstrakurikuler?
+       <span aria-hidden="true" class="faq-icon">
+        ◉
+       </span>
+      </button>
+      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq5" role="region">
+       Kami menyediakan berbagai kegiatan ekstrakurikuler seperti pramuka, olahraga, seni, dan klub teknologi.
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Alumni Section at the bottom -->
+   <section aria-label="Kesan dan Pesan Alumni" class="alumni-section" id="alumni">
+    <!-- Floating icons left -->
+    <div aria-hidden="true" class="floating-icon icon-left-1" title="Graduation cap icon">
+     <i class="fas fa-graduation-cap">
+     </i>
+    </div>
+    <div aria-hidden="true" class="floating-icon icon-left-2" title="Envelope icon">
+     <i class="fas fa-envelope">
+     </i>
+    </div>
+    <div aria-hidden="true" class="floating-icon icon-left-3" title="Star icon">
+     <i class="fas fa-star">
+     </i>
+    </div>
+    <!-- Floating icons right -->
+    <div aria-hidden="true" class="floating-icon icon-right-1" title="Comments icon">
+     <i class="fas fa-comments">
+     </i>
+    </div>
+    <div aria-hidden="true" class="floating-icon icon-right-2" title="Heart icon">
+     <i class="fas fa-heart">
+     </i>
+    </div>
+    <div aria-hidden="true" class="floating-icon icon-right-3" title="Lightbulb icon">
+     <i class="fas fa-lightbulb">
+     </i>
+    </div>
+    <div class="alumni-header">
+     <h2>
+      Kesan dan Pesan dari Alumni
+     </h2>
+     <p>
+      Mendengar langsung pengalaman dan harapan para alumni kami yang telah
+      menapaki dunia dengan bekal pendidikan dari SMK Wira Buana2.
+     </p>
+    </div>
+    <div class="alumni-cards" role="list">
+     <article aria-label="Kesan dan pesan dari alumni Andi Saputra" class="alumni-card" role="listitem" tabindex="0">
+      <div>
+       <h3 class="alumni-name">
+        Andi Saputra
+       </h3>
+       <p class="alumni-role">
+        Software Engineer
+       </p>
+       <p class="alumni-message">
+        <strong>
+         Kesan:
+        </strong>
+        SMK Wira Buana2 memberikan saya fondasi kuat
+        dalam teknologi dan karakter yang membentuk saya menjadi profesional
+        yang percaya diri.
+        <br/>
+        <strong>
+         Pesan:
+        </strong>
+        Teruslah berinovasi dan jaga semangat belajar,
+        karena masa depan cerah menanti kalian semua!
+       </p>
+      </div>
+     </article>
+     <article aria-label="Kesan dan pesan dari alumni Siti Nurhaliza" class="alumni-card" role="listitem" tabindex="0">
+      <div>
+       <h3 class="alumni-name">
+        Siti Nurhaliza
+       </h3>
+       <p class="alumni-role">
+        Digital Marketing Specialist
+       </p>
+       <p class="alumni-message">
+        <strong>
+         Kesan:
+        </strong>
+        Lingkungan belajar yang suportif dan fasilitas
+        lengkap membuat saya siap menghadapi tantangan dunia kerja.
+        <br/>
+        <strong>
+         Pesan:
+        </strong>
+        Manfaatkan setiap kesempatan belajar dan jangan
+        takut mencoba hal baru.
+       </p>
+      </div>
+     </article>
+     <article aria-label="Kesan dan pesan dari alumni Budi Santoso" class="alumni-card" role="listitem" tabindex="0">
+      <div>
+       <h3 class="alumni-name">
+        Budi Santoso
+       </h3>
+       <p class="alumni-role">
+        IT Consultant
+       </p>
+       <p class="alumni-message">
+        <strong>
+         Kesan:
+        </strong>
+        Pengajar yang profesional dan teknologi modern
+        sangat membantu saya berkembang.
+        <br/>
+        <strong>
+         Pesan:
+        </strong>
+        Jaga integritas dan terus asah kemampuan kalian,
+        karena itu kunci sukses.
+       </p>
+      </div>
+     </article>
+    </div>
+   </section>
+  </main>
+  <script>
+   // Animate count up for a given element from 0 to target over duration (ms)
+    function animateCountUp(element, target, duration) {
+      let start = 0;
+      const stepTime = Math.max(Math.floor(duration / target), 20);
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        if (elapsed >= duration) {
+          element.textContent = target.toLocaleString();
+          return;
         }
+        const progress = elapsed / duration;
+        const currentCount = Math.floor(progress * target);
+        element.textContent = currentCount.toLocaleString();
+        requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
 
-        .btn-spmb {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            border: 2px solid #2563eb;
-            /* blue-600 */
-            color: white;
-            font-weight: 600;
-            border-radius: 9999px;
-            /* rounded */
-            background-color: #2563eb;
-            cursor: pointer;
-            user-select: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 2.5rem;
-            /* 10 */
+    // Visitor data example
+    const visitorData = {
+      total: 123456,
+      year: 23456,
+      month: 3456,
+      day: 456,
+    };
+
+    window.addEventListener("DOMContentLoaded", () => {
+      animateCountUp(
+        document.getElementById("totalVisitors"),
+        visitorData.total,
+        2000
+      );
+      animateCountUp(
+        document.getElementById("yearVisitors"),
+        visitorData.year,
+        2000
+      );
+      animateCountUp(
+        document.getElementById("monthVisitors"),
+        visitorData.month,
+        2000
+      );
+      animateCountUp(
+        document.getElementById("dayVisitors"),
+        visitorData.day,
+        2000
+      );
+    });
+
+    // Slider functionality horizontal with arrow button and auto slide
+    const sliderImages = document.querySelectorAll(
+      ".keunggulan-slider .slider-image"
+    );
+    const nextSlideBtn = document.getElementById("nextSlideBtn");
+    let currentIndex = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      sliderImages.forEach((img, i) => {
+        if (i === index) {
+          img.classList.add("active");
+          img.setAttribute("aria-hidden", "false");
+        } else {
+          img.classList.remove("active");
+          img.setAttribute("aria-hidden", "true");
         }
+      });
+      currentIndex = index;
+    }
 
-        .btn-spmb:hover {
-            background-color: transparent;
-            color: #2563eb;
-        }
+    function nextSlide() {
+      let nextIndex = (currentIndex + 1) % sliderImages.length;
+      showSlide(nextIndex);
+    }
 
-        header {
-            backdrop-filter: blur(35px);
-            background-color: rgba(255, 255, 255, 0);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            z-index: 50;
-        }
+    nextSlideBtn.addEventListener("click", () => {
+      nextSlide();
+      resetInterval();
+    });
 
-        header.scrolled {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 5000);
+    }
 
-        /* Custom CSS for Login button */
-        .btn-login {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            border: 2px solid #2563eb;
-            color: #2563eb;
-            font-weight: 600;
-            border-radius: 9999px;
-            background-color: transparent;
-            cursor: pointer;
-            user-select: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-        }
+    // Initialize slider and start auto sliding
+    showSlide(0);
+    slideInterval = setInterval(nextSlide, 5000);
 
-        .btn-login i {
-            margin-right: 0.5rem;
-        }
-
-        .btn-login:hover {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        /* Custom CSS for Selengkapnya button */
-        .btn-selengkapnya {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            border: 2px solid #2563eb;
-            color: #2563eb;
-            font-weight: 600;
-            border-radius: 9999px;
-            background-color: transparent;
-            cursor: pointer;
-            user-select: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-        }
-
-        .btn-selengkapnya:hover {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        /* Centered text overlay on image */
-        .hero-section {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .hero-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: blur(6px);
-            transform: scale(1.05);
-        }
-
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -60%);
-            color: white;
-            text-align: center;
-            max-width: 90%;
-            padding: 0 1rem;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-            z-index: 10;
-        }
-
-        .hero-text h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .hero-text p {
-            font-weight: 400;
-            font-size: 1.125rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        @media (min-width: 768px) {
-            .hero-text h1 {
-                font-size: 3.5rem;
-            }
-
-            .hero-text p {
-                font-size: 1.25rem;
-            }
-        }
-
-        .video-welcome-section {
-            width: 100vw;
-            min-height: 100vh;
-            background: linear-gradient(to right, #001f3f, #003366);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        @media (min-width: 500px) {
-            .video-welcome-section {
-                flex-direction: row;
-                gap: 2rem;
-                align-items: flex-start;
-                width: 100vw;
-                margin: 0;
-            }
-
-            .video-container {
-                flex: 0 0 35%;
-                /* Lebar 35% */
-                position: relative;
-                padding-bottom: 75%;
-                /* Aspect ratio 4:3 */
-                height: 0;
-                /* Penting untuk teknik aspect ratio */
-                overflow: hidden;
-                border-radius: 0.5rem;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-                /* Shadow lebih ringan dan kecil */
-            }
-
-            .video-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 0;
-            }
-
-            .welcome-text {
-                flex: 1;
-                max-width: 60%;
-                font-weight: 400;
-                font-size: 1.25rem;
-                line-height: 1.6;
-                font-family: 'Montserrat', sans-serif;
-            }
-        }
-
-        .welcome-text h2 {
-            font-weight: 700;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .welcome-text p {
-            margin-top: 0;
-            font-style: normal;
-        }
-    </style>
-</head>
-
-<body class="bg-gray-50 min-h-screen flex flex-col">
-    <header class="fixed top-0 left-0 w-full shadow-none">
-        <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20 max-w-[1180px] mx-auto w-full">
-            <!-- Left side: Logo and text -->
-            <div class="flex items-center space-x-3">
-                <img alt="School logo, square 65 by 65 pixels, blue background with white text 'Logo'"
-                    class="flex-shrink-0" height="65" src="logowb2.png" width="65" />
-                <div class="leading-tight">
-                    <h1 class="text-xl font-bold text-gray-900">
-                        SMK
-                    </h1>
-                    <p class="text-sm font-semibold text-gray-600 -mt-1">
-                        WIRA BUANA2
-                    </p>
-                </div>
-            </div>
-            <!-- Center: Navigation tabs -->
-            <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
-                    Home
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
-                    About
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
-                    Guest Teacher
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
-                    Alumni
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
-                    Activity
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
-                    Contact
-                </a>
-            </nav>
-            <!-- Right side: Login button and SPMB button -->
-            <div class="flex items-center space-x-4">
-                <button class="btn-login hidden md:inline-flex" type="button">
-                    <i class="fas fa-sign-in-alt"></i>
-                    Login
-                </button>
-                <button class="btn-spmb hidden md:inline-block" type="button">
-                    SPMB
-                </button>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div class="md:hidden border-t border-gray-200">
-            <nav class="flex justify-around py-3 text-gray-700 font-semibold">
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
-                    Home
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
-                    About
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
-                    Guest Teacher
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
-                    Alumni
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
-                    Activity
-                </a>
-                <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
-                    Contact
-                </a>
-                <button
-                    class="ml-2 px-3 py-1 border border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-600 hover:text-white transition"
-                    type="button">
-                    <i class="fas fa-sign-in-alt mr-1">
-                    </i>
-                    Login
-                </button>
-                <button
-                    class="ml-2 px-6 py-1 border border-blue-600 text-white font-semibold rounded bg-blue-600 hover:bg-transparent hover:text-blue-600 transition"
-                    type="button">
-                    SPMB
-                </button>
-            </nav>
-        </div>
-    </header>
-    <main class="flex-grow w-full mx-auto px-0 py-0 pt-35">
-        <section id="home" class="hero-section">
-            <img alt="Full width and height photo of a modern school building with clear blue sky and green trees around"
-                src="FOTOWB2.jpg" />
-            <div class="hero-text">
-                <h1>
-                    SEKOLAH TERBAIK
-                </h1>
-                <p>
-                    Sekolah unggulan yang berfokus pada pendidikan karakter akademik dan teknologi
-                </p>
-                <button class="btn-selengkapnya" type="button">
-                    Selengkapnya
-                </button>
-            </div>
-        </section>
-        <section class="video-welcome-section" aria-label="Video and welcome message">
-            <div class="video-container">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen frameborder="0"
-                        title="YouTube video player">
-                    </iframe>
-                </div>
-
-
-            </div>
-            <div class="welcome-text">
-                <h2>Selamat datang di website sekolah Wira Buana 2</h2>
-                <p>- SMK WIRA BUANA 2 adalah sekolah unggulan yang telah berdiri sejak tahun 2008 dengan latar belakang
-                </p>
-            </div>
-        </section>
-    </main>
-    <script>
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+    // FAQ toggle logic with smooth height animation and no space when closed
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const expanded = item.getAttribute("aria-expanded") === "true";
+        // Close all
+        faqItems.forEach((i) => {
+          i.setAttribute("aria-expanded", "false");
+          const answer = document.getElementById(i.getAttribute("aria-controls"));
+          answer.classList.remove("active");
+          answer.setAttribute("aria-hidden", "true");
+          i.querySelector(".faq-icon").textContent = "◉";
         });
+<<<<<<< HEAD
     </script>
 </body>
+=======
+        if (!expanded) {
+          item.setAttribute("aria-expanded", "true");
+          const answer = document.getElementById(item.getAttribute("aria-controls"));
+          answer.classList.add("active");
+          answer.setAttribute("aria-hidden", "false");
+          item.querySelector(".faq-icon").textContent = "◉";
+          item.focus();
+        }
+      });
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          item.click();
+        }
+      });
+    });
+  </script>
+ </body>
+>>>>>>> fbe7c3539874deaaf53014e3df1ec5beb1d6d15e
 </html>
