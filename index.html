@@ -521,135 +521,6 @@
       }
     }
 
-    /* FAQ Section Styles */
-    .faq-section {
-      background-color: #2563eb;
-      color: white;
-      padding: 3rem 1rem 4rem;
-      font-family: "Roboto", sans-serif;
-      max-width: 1180px;
-      margin: 0 auto 4rem;
-      border-radius: 1rem;
-      box-sizing: border-box;
-    }
-
-    .faq-container {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    @media (min-width: 768px) {
-      .faq-container {
-        flex-direction: row;
-        gap: 4rem;
-      }
-    }
-
-    .faq-text {
-      flex: 1;
-      max-width: 480px;
-      margin-top: 4.5rem;
-      margin-bottom: 4.5rem;
-    }
-
-    .faq-text h2 {
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
-      line-height: 1.2;
-    }
-
-    .faq-text p {
-      font-weight: 400;
-      font-size: 1.125rem;
-      line-height: 1.5;
-      margin-top: 0;
-      color: #dbeafe; /* lighter blue for contrast */
-    }
-
-    .faq-box {
-      flex: 1;
-      background-color: white;
-      border-radius: 1rem;
-      padding: 1.5rem 1rem 1.5rem 1rem;
-      box-sizing: border-box;
-      max-width: 520px;
-      box-shadow: 0 8px 20px rgb(37 99 235 / 0.4);
-      color: #1e40af;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .faq-item {
-      background-color: #2563eb;
-      color: white;
-      border-radius: 0.75rem;
-      padding: 0.75rem 1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      user-select: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 2px 8px rgb(37 99 235 / 0.5);
-      justify-content: space-between;
-    }
-
-    .faq-item:hover,
-    .faq-item:focus {
-      background-color: transparent;
-      color: #2563eb;
-      border: 2px solid white;
-      outline: none;
-    }
-
-    .faq-item i,
-    .faq-item .faq-icon {
-      flex-shrink: 0;
-      font-size: 1.25rem;
-      color: white;
-      transition: color 0.3s ease;
-      order: 2;
-      user-select: none;
-    }
-
-    .faq-item:hover i,
-    .faq-item:focus i,
-    .faq-item:hover .faq-icon,
-    .faq-item:focus .faq-icon {
-      color: #2563eb;
-    }
-
-    .faq-answer {
-      background-color: #e0e7ff;
-      color: #1e40af;
-      border-radius: 0.75rem;
-      padding: 0 1.25rem;
-      font-size: 0.95rem;
-      line-height: 1.4;
-      margin-top: 0;
-      user-select: text;
-      box-shadow: 0 4px 12px rgb(37 99 235 / 0.3);
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-    }
-
-    .faq-answer.active {
-      max-height: 500px;
-      opacity: 1;
-      padding: 1rem 1.25rem;
-      margin-top: 0.25rem;
-    }
-
     /* Alumni Section Styles */
     .alumni-section {
       position: relative;
@@ -732,6 +603,40 @@
       font-size: 1.125rem;
       color: #3b82f6;
       margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .alumni-role i {
+      font-size: 1.25rem;
+      color: #2563eb;
+      user-select: none;
+    }
+
+    /* Only the icon with class icon-study and icon-email and icon-other have animation */
+    .alumni-role .icon-study {
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-name: floatUpDownA;
+      animation-duration: 6s;
+    }
+
+    .alumni-role .icon-email {
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-name: floatUpDownB;
+      animation-duration: 8s;
+    }
+
+    .alumni-role .icon-other {
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-name: floatUpDownC;
+      animation-duration: 7s;
     }
 
     .alumni-message {
@@ -879,6 +784,157 @@
         opacity: 0.3;
       }
     }
+
+    /* Footer styles */
+    footer {
+      background-color: #1e40af;
+      color: white;
+      padding: 2rem 1rem 2.5rem 1rem;
+      font-family: "Roboto", sans-serif;
+      box-shadow: 0 -4px 10px rgb(30 64 175 / 0.6);
+      position: relative;
+      z-index: 20;
+    }
+
+    .footer-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      flex: 1 1 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      user-select: none;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .footer-logo img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+      border-radius: 9999px;
+      background-color: white;
+      padding: 0.25rem;
+    }
+
+    .footer-logo-text {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-description {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #dbeafe;
+      max-width: 320px;
+      line-height: 1.4;
+    }
+
+    .footer-schedule {
+      flex: 1 1 280px;
+      color: #dbeafe;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.5;
+      user-select: none;
+      padding-left: 1rem;
+      border-left: 2px solid #3b82f6;
+      max-width: 280px;
+    }
+
+    .footer-schedule h3 {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: #93c5fd;
+    }
+
+    .footer-schedule dl {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      row-gap: 0.4rem;
+      column-gap: 1rem;
+    }
+
+    .footer-schedule dt {
+      font-weight: 600;
+      color: #bfdbfe;
+    }
+
+    .footer-schedule dd {
+      margin: 0;
+      color: #dbeafe;
+    }
+
+    .footer-social {
+      flex: 1 1 160px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .footer-social a {
+      color: white;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .footer-social a:hover,
+    .footer-social a:focus-visible {
+      color: #93c5fd;
+      outline: none;
+    }
+
+    .footer-copy {
+      width: 100%;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      user-select: none;
+      color: #dbeafe;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .footer-left,
+      .footer-schedule,
+      .footer-social {
+        flex: none;
+        max-width: 100%;
+        justify-content: center;
+        padding-left: 0;
+        border-left: none;
+        text-align: center;
+      }
+      .footer-schedule dl {
+        grid-template-columns: 1fr;
+        row-gap: 0.25rem;
+      }
+      .footer-social {
+        font-size: 1.75rem;
+      }
+    }
   </style>
  </head>
  <body class="bg-gray-50 min-h-screen flex flex-col">
@@ -897,32 +953,32 @@
     </div>
     <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
      <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
-      Home
+      Beranda
      </a>
      <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
-      About
+      Tentang
      </a>
      <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
-      Guest
+      Tamu
      </a>
      <a class="hover:text-blue-600 transition-colors duration-200" href="#teacher">
-      Teacher
+      Guru
      </a>
      <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
       Alumni
      </a>
      <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
-      Activity
+      Aktivitas
      </a>
      <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
-      Contact
+      Kontak
      </a>
     </nav>
     <div class="flex items-center space-x-4">
      <button class="btn-login hidden md:inline-flex" type="button">
       <i class="fas fa-sign-in-alt">
       </i>
-      Login
+      Masuk
      </button>
      <button class="btn-spmb hidden md:inline-block" type="button">
       SPMB
@@ -1100,65 +1156,6 @@
      </button>
     </div>
    </section>
-   <section aria-label="Frequently Asked Questions" class="faq-section" id="about">
-    <div class="faq-container">
-     <div class="faq-text">
-      <h2>
-       Frequently Asked Questions
-      </h2>
-      <p>
-       Temukan jawaban atas pertanyaan umum tentang SMK Wira Buana2 dan layanan kami.
-      </p>
-     </div>
-     <div class="faq-box" role="list">
-      <button aria-controls="faq1" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
-       Apa jurusan yang tersedia di SMK Wira Buana2?
-       <span aria-hidden="true" class="faq-icon">
-        ◉
-       </span>
-      </button>
-      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq1" role="region">
-       SMK Wira Buana2 menawarkan jurusan Teknik Komputer dan Jaringan, Multimedia, dan Rekayasa Perangkat Lunak.
-      </div>
-      <button aria-controls="faq2" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
-       Bagaimana proses pendaftaran siswa baru?
-       <span aria-hidden="true" class="faq-icon">
-        ◉
-       </span>
-      </button>
-      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq2" role="region">
-       Pendaftaran siswa baru dapat dilakukan secara online melalui website resmi kami atau langsung ke sekolah.
-      </div>
-      <button aria-controls="faq3" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
-       Apakah ada beasiswa untuk siswa berprestasi?
-       <span aria-hidden="true" class="faq-icon">
-        ◉
-       </span>
-      </button>
-      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq3" role="region">
-       Ya, kami menyediakan beasiswa bagi siswa berprestasi akademik dan non-akademik.
-      </div>
-      <button aria-controls="faq4" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
-       Apa fasilitas yang tersedia di sekolah?
-       <span aria-hidden="true" class="faq-icon">
-        ◉
-       </span>
-      </button>
-      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq4" role="region">
-       Fasilitas kami meliputi laboratorium komputer, perpustakaan, ruang multimedia, lapangan olahraga, dan ruang seni.
-      </div>
-      <button aria-controls="faq5" aria-expanded="false" class="faq-item" role="listitem" tabindex="0">
-       Bagaimana dengan kegiatan ekstrakurikuler?
-       <span aria-hidden="true" class="faq-icon">
-        ◉
-       </span>
-      </button>
-      <div aria-hidden="true" aria-live="polite" class="faq-answer" id="faq5" role="region">
-       Kami menyediakan berbagai kegiatan ekstrakurikuler seperti pramuka, olahraga, seni, dan klub teknologi.
-      </div>
-     </div>
-    </div>
-   </section>
    <!-- Alumni Section at the bottom -->
    <section aria-label="Kesan dan Pesan Alumni" class="alumni-section" id="alumni">
     <!-- Floating icons left -->
@@ -1197,36 +1194,14 @@
      </p>
     </div>
     <div class="alumni-cards" role="list">
-     <article aria-label="Kesan dan pesan dari alumni Andi Saputra" class="alumni-card" role="listitem" tabindex="0">
-      <div>
-       <h3 class="alumni-name">
-        Andi Saputra
-       </h3>
-       <p class="alumni-role">
-        Software Engineer
-       </p>
-       <p class="alumni-message">
-        <strong>
-         Kesan:
-        </strong>
-        SMK Wira Buana2 memberikan saya fondasi kuat
-        dalam teknologi dan karakter yang membentuk saya menjadi profesional
-        yang percaya diri.
-        <br/>
-        <strong>
-         Pesan:
-        </strong>
-        Teruslah berinovasi dan jaga semangat belajar,
-        karena masa depan cerah menanti kalian semua!
-       </p>
-      </div>
-     </article>
      <article aria-label="Kesan dan pesan dari alumni Siti Nurhaliza" class="alumni-card" role="listitem" tabindex="0">
       <div>
        <h3 class="alumni-name">
         Siti Nurhaliza
        </h3>
        <p class="alumni-role">
+
+        </i>
         Digital Marketing Specialist
        </p>
        <p class="alumni-message">
@@ -1244,32 +1219,148 @@
        </p>
       </div>
      </article>
-     <article aria-label="Kesan dan pesan dari alumni Budi Santoso" class="alumni-card" role="listitem" tabindex="0">
+     <article aria-label="Kesan dan pesan dari alumni Siti Nurhaliza" class="alumni-card" role="listitem" tabindex="0">
       <div>
        <h3 class="alumni-name">
-        Budi Santoso
+        Siti Nurhaliza
        </h3>
        <p class="alumni-role">
-        IT Consultant
+        </i>
+        Digital Marketing Specialist
        </p>
        <p class="alumni-message">
         <strong>
          Kesan:
         </strong>
-        Pengajar yang profesional dan teknologi modern
-        sangat membantu saya berkembang.
+        Lingkungan belajar yang suportif dan fasilitas
+        lengkap membuat saya siap menghadapi tantangan dunia kerja.
         <br/>
         <strong>
          Pesan:
         </strong>
-        Jaga integritas dan terus asah kemampuan kalian,
-        karena itu kunci sukses.
+        Manfaatkan setiap kesempatan belajar dan jangan
+        takut mencoba hal baru.
+       </p>
+      </div>
+     </article>
+          <article aria-label="Kesan dan pesan dari alumni Siti Nurhaliza" class="alumni-card" role="listitem" tabindex="0">
+      <div>
+       <h3 class="alumni-name">
+        Siti Nurhaliza
+       </h3>
+       <p class="alumni-role">
+        </i>
+        Digital Marketing Specialist
+       </p>
+       <p class="alumni-message">
+        <strong>
+         Kesan:
+        </strong>
+        Lingkungan belajar yang suportif dan fasilitas
+        lengkap membuat saya siap menghadapi tantangan dunia kerja.
+        <br/>
+        <strong>
+         Pesan:
+        </strong>
+        Manfaatkan setiap kesempatan belajar dan jangan
+        takut mencoba hal baru.
        </p>
       </div>
      </article>
     </div>
    </section>
   </main>
+  <footer>
+   <div class="footer-container">
+    <div aria-label="Logo and description" class="footer-left">
+     <div class="footer-logo">
+      <img alt="Logo SMK Wira Buana 2, square blue background with white text 'Logo'" height="65" src="logowb2.png" width="65"/>
+      <span class="footer-logo-text">
+       SMK Wira Buana 2
+      </span>
+     </div>
+     <div class="footer-description">
+      Website resmi sekolah unggulan berbasis karakter dan teknologi
+     </div>
+     <div style="      border-radius: 15px;
+      background-color: white;">
+        <img src="Logo Jagoan Hosting, Komdigi, 1000 Startup Digital, dan Maspion IT.png" alt="">
+     </div>
+    </div>
+    <div aria-label="Jam operasional sekolah" class="footer-schedule">
+     <h3>
+      Jam Operasional
+     </h3>
+     <dl>
+      <dt>
+       Senin
+      </dt>
+      <dd>
+       08:00 - 16:00
+      </dd>
+      <dt>
+       Selasa
+      </dt>
+      <dd>
+       08:00 - 16:00
+      </dd>
+      <dt>
+       Rabu
+      </dt>
+      <dd>
+       08:00 - 16:00
+      </dd>
+      <dt>
+       Kamis
+      </dt>
+      <dd>
+       08:00 - 16:00
+      </dd>
+      <dt>
+       Jumat
+      </dt>
+      <dd>
+       08:00 - 16:00
+      </dd>
+      <dt>
+       Sabtu
+      </dt>
+      <dd>
+       08:00 - 12:00
+      </dd>
+      <dt>
+       Minggu
+      </dt>
+      <dd>
+       Tutup
+      </dd>
+     </dl>
+    </div>
+    <nav aria-label="Social media links" class="footer-social">
+     <a aria-label="Instagram" href="https://www.instagram.com/smkwirabuana2" rel="noopener noreferrer" target="_blank" title="Instagram">
+      <i aria-hidden="true" class="fab fa-instagram">
+      </i>
+     </a>
+     <a aria-label="WhatsApp" href="https://wa.me/6281234567890" rel="noopener noreferrer" target="_blank" title="WhatsApp">
+      <i aria-hidden="true" class="fab fa-whatsapp">
+      </i>
+     </a>
+      </i>
+     </a>
+     <a aria-label="TikTok" href="https://www.tiktok.com/@smkwirabuana2" rel="noopener noreferrer" target="_blank" title="TikTok">
+      <i aria-hidden="true" class="fab fa-tiktok">
+      </i>
+     </a>
+     <a aria-label="Email" href="mailto:info@smkwirabuana2.sch.id" title="Email">
+      <i aria-hidden="true" class="fas fa-envelope">
+      </i>
+     </a>
+    </nav>
+   </div>
+   <div class="footer-copy">
+    © 2024 SMK Wira Buana 2. All rights reserved.
+   </div>
+  </footer>
   <script>
    // Animate count up for a given element from 0 to target over duration (ms)
     function animateCountUp(element, target, duration) {
@@ -1358,40 +1449,7 @@
       slideInterval = setInterval(nextSlide, 5000);
     }
 
-    // Initialize slider and start auto sliding
-    showSlide(0);
-    slideInterval = setInterval(nextSlide, 5000);
-
-    // FAQ toggle logic with smooth height animation and no space when closed
-    const faqItems = document.querySelectorAll(".faq-item");
-    faqItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        const expanded = item.getAttribute("aria-expanded") === "true";
-        // Close all
-        faqItems.forEach((i) => {
-          i.setAttribute("aria-expanded", "false");
-          const answer = document.getElementById(i.getAttribute("aria-controls"));
-          answer.classList.remove("active");
-          answer.setAttribute("aria-hidden", "true");
-          i.querySelector(".faq-icon").textContent = "◉";
-        });
-
-        if (!expanded) {
-          item.setAttribute("aria-expanded", "true");
-          const answer = document.getElementById(item.getAttribute("aria-controls"));
-          answer.classList.add("active");
-          answer.setAttribute("aria-hidden", "false");
-          item.querySelector(".faq-icon").textContent = "◉";
-          item.focus();
-        }
-      });
-      item.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          item.click();
-        }
-      });
-    });
+    // FAQ removed as requested
   </script>
  </body>
 </html>
