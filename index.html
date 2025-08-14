@@ -220,7 +220,7 @@
 
       .video-container iframe {
         position: absolute;
-        top: 6px;
+        top: -27px;
         left: 6px;
         width: 500px;
         height: 260px;
@@ -232,7 +232,7 @@
 
       .video-box {
         position: absolute;
-        top: -12px;
+        top: -52px;
         left: -12px;
         background-color: #2563eb;
         border-radius: 0.5rem;
@@ -1296,7 +1296,7 @@
      <div class="footer-description">
       Website resmi sekolah unggulan berbasis karakter dan teknologi
      </div>
-     <div style="border-radius: 8px; background-color: white;">
+     <div style="border-radius: 5px; background-color: white;">
       <img alt="Logos of Jagoan Hosting, Komdigi, 1000 Startup Digital, and Maspion IT in a horizontal row" src="Logo Jagoan Hosting, Komdigi, 1000 Startup Digital, dan Maspion IT.png"/>
      </div>
     </div>
@@ -1392,12 +1392,82 @@
       requestAnimationFrame(update);
     }
 
-    const visitorData = {
-      total: 123457,
-      year: 500,
-      month: 3456,
-      day: 456,
-    };
+document.addEventListener("DOMContentLoaded", () => {
+  const stats = {
+    total: 0,
+    year: 0,
+    month: 0,
+    day: 0,
+    lastClickDate: null
+  };
+
+  const today = new Date();
+  const todayStr = today.toISOString().split("T")[0]; // format YYYY-MM-DD
+  const thisMonth = today.getMonth();
+  const thisYear = today.getFullYear();
+
+  // Ambil data dari localStorage kalau ada
+  const saved = JSON.parse(localStorage.getItem("visitorStats"));
+  if (saved) {
+    // Reset otomatis jika ganti tahun/bulan/hari
+    if (saved.yearDate !== thisYear) {
+      saved.year = 0;
+      saved.yearDate = thisYear;
+    }
+    if (saved.monthDate !== `${thisMonth}-${thisYear}`) {
+      saved.month = 0;
+      saved.monthDate = `${thisMonth}-${thisYear}`;
+    }
+    if (saved.dayDate !== todayStr) {
+      saved.day = 0;
+      saved.dayDate = todayStr;
+      saved.clickedToday = false; // reset klik harian
+    }
+    Object.assign(stats, saved);
+  } else {
+    stats.yearDate = thisYear;
+    stats.monthDate = `${thisMonth}-${thisYear}`;
+    stats.dayDate = todayStr;
+    stats.clickedToday = false;
+  }
+
+  // Update tampilan awal
+  document.getElementById("totalVisitors").textContent = stats.total;
+  document.getElementById("yearVisitors").textContent = stats.year;
+  document.getElementById("monthVisitors").textContent = stats.month;
+  document.getElementById("dayVisitors").textContent = stats.day;
+
+  // Fungsi simpan ke localStorage
+  function saveStats() {
+    localStorage.setItem("visitorStats", JSON.stringify(stats));
+  }
+
+  // Saat klik link, tambah visitor
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (!stats.clickedToday) {
+        stats.total++;
+        stats.year++;
+        stats.month++;
+        stats.day++;
+        stats.clickedToday = true;
+        stats.lastClickDate = todayStr;
+
+        // Update tampilan
+        document.getElementById("totalVisitors").textContent = stats.total;
+        document.getElementById("yearVisitors").textContent = stats.year;
+        document.getElementById("monthVisitors").textContent = stats.month;
+        document.getElementById("dayVisitors").textContent = stats.day;
+
+        // Simpan
+        saveStats();
+      }
+    });
+  });
+
+  // Simpan awal kalau data baru
+  saveStats();
+});
 
     window.addEventListener("DOMContentLoaded", () => {
       animateCountUp(
