@@ -1515,6 +1515,18 @@
     }
 
     resetInterval();
+
+    const navLinks = document.querySelectorAll('.link-underline');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Hapus active dari semua link
+        navLinks.forEach(l => l.classList.remove('active'));
+
+        // Tambah active ke link yang diklik
+        link.classList.add('active');
+      });
+    });
   </script>
 </body>
 
