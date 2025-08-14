@@ -1,17 +1,24 @@
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <title>
-   SMK Wira Buana2
+    SMK Wira Buana2
   </title>
-  <link href="logowb2.png" rel="icon" type="image/png"/>
+  <link href="logowb2.png" rel="icon" type="image/png" />
   <script src="https://cdn.tailwindcss.com">
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Montserrat:wght@600&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Montserrat:wght@600&amp;display=swap"
+    rel="stylesheet" />
   <style>
-   body {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: "Roboto", sans-serif;
       margin: 0;
       padding: 0;
@@ -168,7 +175,8 @@
       color: #001f3f;
       display: flex;
       flex-direction: column;
-      padding: 2rem 1rem; /* Reduced padding to match other sections */
+      padding: 2rem 1rem;
+      /* Reduced padding to match other sections */
       margin: 0 auto;
       box-sizing: border-box;
       align-items: center;
@@ -312,6 +320,7 @@
     }
 
     @media (max-width: 768px) {
+
       .welcome-text h2,
       .welcome-text h3,
       .welcome-text p {
@@ -950,430 +959,483 @@
         font-size: 1.75rem;
       }
     }
+
+    @layer utilities {
+      .link-underline {
+        position: relative;
+        display: inline-block;
+      }
+
+      .link-underline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 2px;
+        width: 0%;
+        background-color: currentColor;
+        transition: width 0.3s ease;
+      }
+
+      .link-underline:hover::after,
+      .link-underline.active::after {
+        width: 100%;
+      }
+    }
   </style>
- </head>
- <body class="bg-gray-50 min-h-screen flex flex-col">
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
   <header>
-   <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20 max-w-[1180px] mx-auto w-full">
-    <div class="flex items-center space-x-3">
-     <img alt="School logo, square 65 by 65 pixels, blue background with white text 'Logo'" class="flex-shrink-0" height="65" src="logowb2.png" width="65"/>
-     <div class="leading-tight">
-      <h1 class="text-xl font-bold text-gray-900">
-       SMK
-      </h1>
-      <p class="text-sm font-semibold text-gray-600 -mt-1">
-       WIRA BUANA2
-      </p>
-     </div>
+    <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20 max-w-[1180px] mx-auto w-full">
+      <div class="flex items-center space-x-3">
+        <img alt="School logo, square 65 by 65 pixels, blue background with white text 'Logo'" class="flex-shrink-0"
+          height="65" src="logowb2.png" width="65" />
+        <div class="leading-tight">
+          <h1 class="text-xl font-bold text-gray-900">
+            SMK
+          </h1>
+          <p class="text-sm font-semibold text-gray-600 -mt-1">
+            WIRA BUANA2
+          </p>
+        </div>
+      </div>
+      <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
+        <a href="#home" class="link-underline hover:text-blue-600 transition-colors duration-200">
+          Beranda
+        </a>
+        <a href="#about" class="link-underline hover:text-blue-600 transition-colors duration-200">
+          Tentang
+        </a>
+        <a href="#guest" class="link-underline hover:text-blue-600 transition-colors duration-200">
+          Tamu
+        </a>
+        <a href="#teacher" class="link-underline hover:text-blue-600 transition-colors duration-200">
+          Guru
+        </a>
+        <a href="#alumni" class="link-underline hover:text-blue-600 transition-colors duration-200">
+          Alumni
+        </a>
+        <a href="#activity" class="link-underline hover:text-blue-600 transition-colors duration-200">
+          Aktivitas
+        </a>
+        <a href="#contact" class="link-underline hover:text-blue-600 transition-colors duration-200">
+          Kontak
+        </a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <button class="btn-login hidden md:inline-flex" type="button">
+          <i class="fas fa-sign-in-alt">
+          </i>
+          Masuk
+        </button>
+        <button class="btn-spmb hidden md:inline-block" type="button">
+          SPMB
+        </button>
+      </div>
     </div>
-    <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
-      Beranda
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
-      Tentang
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
-      Tamu
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#teacher">
-      Guru
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
-      Alumni
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
-      Aktivitas
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
-      Kontak
-     </a>
-    </nav>
-    <div class="flex items-center space-x-4">
-     <button class="btn-login hidden md:inline-flex" type="button">
-      <i class="fas fa-sign-in-alt">
-      </i>
-      Masuk
-     </button>
-     <button class="btn-spmb hidden md:inline-block" type="button">
-      SPMB
-     </button>
+    <div class="md:hidden border-t border-gray-200">
+      <nav class="flex flex-wrap justify-around py-3 text-gray-700 font-semibold gap-2">
+        <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
+          Home
+        </a>
+        <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
+          About
+        </a>
+        <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
+          Guest
+        </a>
+        <a class="hover:text-blue-600 transition-colors duration-200" href="#teacher">
+          Teacher
+        </a>
+        <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
+          Alumni
+        </a>
+        <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
+          Activity
+        </a>
+        <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
+          Contact
+        </a>
+        <button
+          class="ml-2 px-3 py-1 border border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-600 hover:text-white transition flex items-center"
+          type="button">
+          <i class="fas fa-sign-in-alt mr-1">
+          </i>
+          Login
+        </button>
+        <button
+          class="ml-2 px-6 py-1 border border-blue-600 text-white font-semibold rounded bg-blue-600 hover:bg-transparent hover:text-blue-600 transition"
+          type="button">
+          SPMB
+        </button>
+      </nav>
     </div>
-   </div>
-   <div class="md:hidden border-t border-gray-200">
-    <nav class="flex flex-wrap justify-around py-3 text-gray-700 font-semibold gap-2">
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#home">
-      Home
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#about">
-      About
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#guest">
-      Guest
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#teacher">
-      Teacher
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#alumni">
-      Alumni
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#activity">
-      Activity
-     </a>
-     <a class="hover:text-blue-600 transition-colors duration-200" href="#contact">
-      Contact
-     </a>
-     <button class="ml-2 px-3 py-1 border border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-600 hover:text-white transition flex items-center" type="button">
-      <i class="fas fa-sign-in-alt mr-1">
-      </i>
-      Login
-     </button>
-     <button class="ml-2 px-6 py-1 border border-blue-600 text-white font-semibold rounded bg-blue-600 hover:bg-transparent hover:text-blue-600 transition" type="button">
-      SPMB
-     </button>
-    </nav>
-   </div>
   </header>
   <main class="flex-grow w-full mx-auto px-0 py-0 pt-25">
-   <section class="hero-section" id="home">
-    <img alt="Full width and height photo of a modern school building with clear blue sky and green trees around" src="FOTOWB2.jpg"/>
-    <div class="hero-text">
-     <h1>
-      SEKOLAH TERBAIK
-     </h1>
-     <p>
-      Sekolah unggulan yang berfokus pada pendidikan karakter akademik dan teknologi
-     </p>
-     <button class="btn-selengkapnya" type="button">
-      Selengkapnya
-     </button>
-    </div>
-   </section>
-   <section aria-label="Video and welcome message" class="video-welcome-section" id="about">
-    <div class="video-container">
-     <iframe allowfullscreen="" frameborder="0" src="https://youtube.com/embed/MCU_3jg3kyQ?si=bu51cOacEm1yFleI" title="YouTube video player">
-     </iframe>
-     <div aria-labelledby="box-title" class="video-box" role="region">
-      <i aria-hidden="true" class="fas fa-users">
-      </i>
-      <span id="box-title">
-       Tentang
-       <br/>
-       Sekolah Kami
-      </span>
-     </div>
-    </div>
-    <div class="welcome-text">
-     <h2>
-      Selamat Datang di Website
-     </h2>
-     <h3>
-      Sekolah WiraBuana 2
-     </h3>
-     <p>
-      SMK Wira Buana 2 adalah sekolah berbasis industri yang sejak 2008 konsisten mencetak generasi unggul di Era 4.0.
+    <section class="hero-section" id="home">
+      <img alt="Full width and height photo of a modern school building with clear blue sky and green trees around"
+        src="FOTOWB2.jpg" />
+      <div class="hero-text">
+        <h1>
+          SEKOLAH TERBAIK
+        </h1>
+        <p>
+          Sekolah unggulan yang berfokus pada pendidikan karakter akademik dan teknologi
+        </p>
+        <button class="btn-selengkapnya" type="button">
+          Selengkapnya
+        </button>
+      </div>
+    </section>
+    <section aria-label="Video and welcome message" class="video-welcome-section" id="about">
+      <div class="video-container">
+        <iframe allowfullscreen="" frameborder="0" src="https://youtube.com/embed/MCU_3jg3kyQ?si=bu51cOacEm1yFleI"
+          title="YouTube video player">
+        </iframe>
+        <div aria-labelledby="box-title" class="video-box" role="region">
+          <i aria-hidden="true" class="fas fa-users">
+          </i>
+          <span id="box-title">
+            Tentang
+            <br />
+            Sekolah Kami
+          </span>
+        </div>
+      </div>
+      <div class="welcome-text">
+        <h2>
+          Selamat Datang di Website
+        </h2>
+        <h3>
+          Sekolah WiraBuana 2
+        </h3>
+        <p>
+          SMK Wira Buana 2 adalah sekolah berbasis industri yang sejak 2008 konsisten mencetak generasi unggul di Era
+          4.0.
           Kami memadukan pembelajaran akademik, keterampilan praktis, dan pembentukan karakter Pancasila untuk
           menghasilkan lulusan yang siap kerja, siap berwirausaha, dan siap memimpin.
-     </p>
-     <br/>
-     <p>
-      Melalui kurikulum yang selaras dengan kebutuhan IDUKA (Industri dan Dunia Kerja), fasilitas modern berstandar
+        </p>
+        <br />
+        <p>
+          Melalui kurikulum yang selaras dengan kebutuhan IDUKA (Industri dan Dunia Kerja), fasilitas modern berstandar
           industri, serta program unggulan seperti Teaching Factory, kami menciptakan lingkungan belajar yang nyaman,
           kreatif, dan inovatif.
-     </p>
-    </div>
-   </section>
-   <section aria-label="Jumlah Pengunjung Website Sekolah Kami" class="visitor-stats-section">
-    <div class="visitor-stats-box">
-     <h2 class="visitor-stats-title">
-      Jumlah Pengunjung Website Sekolah Kami
-     </h2>
-     <div class="stats-grid" role="list">
-      <div aria-label="Total Pengunjung" class="stat-item" role="listitem">
-       <div aria-atomic="true" aria-live="polite" class="stat-number" id="totalVisitors">
-        0
-       </div>
-       <div class="stat-label">
-        Total Pengunjung
-       </div>
+        </p>
       </div>
-      <div aria-label="Pengunjung Tahun Ini" class="stat-item" role="listitem">
-       <div aria-atomic="true" aria-live="polite" class="stat-number" id="yearVisitors">
-        0
-       </div>
-       <div class="stat-label">
-        Tahun Ini
-       </div>
+    </section>
+    <section aria-label="Jumlah Pengunjung Website Sekolah Kami" class="visitor-stats-section">
+      <div class="visitor-stats-box">
+        <h2 class="visitor-stats-title">
+          Jumlah Pengunjung Website Sekolah Kami
+        </h2>
+        <div class="stats-grid" role="list">
+          <div aria-label="Total Pengunjung" class="stat-item" role="listitem">
+            <div aria-atomic="true" aria-live="polite" class="stat-number" id="totalVisitors">
+              N/A
+            </div>
+            <div class="stat-label">
+              Total Pengunjung
+            </div>
+          </div>
+          <div aria-label="Pengunjung Tahun Ini" class="stat-item" role="listitem">
+            <div aria-atomic="true" aria-live="polite" class="stat-number" id="yearVisitors">
+              0
+            </div>
+            <div class="stat-label">
+              Tahun Ini
+            </div>
+          </div>
+          <div aria-label="Pengunjung Bulan Ini" class="stat-item" role="listitem">
+            <div aria-atomic="true" aria-live="polite" class="stat-number" id="monthVisitors">
+              0
+            </div>
+            <div class="stat-label">
+              Bulan Ini
+            </div>
+          </div>
+          <div aria-label="Pengunjung Hari Ini" class="stat-item" role="listitem">
+            <div aria-atomic="true" aria-live="polite" class="stat-number" id="dayVisitors">
+              0
+            </div>
+            <div class="stat-label">
+              Hari Ini
+            </div>
+          </div>
+        </div>
       </div>
-      <div aria-label="Pengunjung Bulan Ini" class="stat-item" role="listitem">
-       <div aria-atomic="true" aria-live="polite" class="stat-number" id="monthVisitors">
-        0
-       </div>
-       <div class="stat-label">
-        Bulan Ini
-       </div>
+    </section>
+    <section aria-label="Keunggulan Sekolah Kami" class="keunggulan-section">
+      <div class="keunggulan-text">
+        <h2>
+          Beberapa Keunggulan Pada
+        </h2>
+        <h2>
+          Sekolah Kami
+        </h2>
+        <div class="keunggulan-icons" role="list">
+          <div aria-label="Fasilitas Lengkap" class="keunggulan-icon" role="listitem" tabindex="0">
+            <i aria-hidden="true" class="fas fa-school">
+            </i>
+            <span>
+              Fasilitas Lengkap
+            </span>
+          </div>
+          <div aria-label="Pengajar Profesional" class="keunggulan-icon" role="listitem" tabindex="0">
+            <i aria-hidden="true" class="fas fa-chalkboard-teacher">
+            </i>
+            <span>
+              Pengajar Profesional
+            </span>
+          </div>
+          <div aria-label="Teknologi Modern" class="keunggulan-icon" role="listitem" tabindex="0">
+            <i aria-hidden="true" class="fas fa-laptop-code">
+            </i>
+            <span>
+              Teknologi Modern
+            </span>
+          </div>
+          <div aria-label="Lingkungan Nyaman" class="keunggulan-icon" role="listitem" tabindex="0">
+            <i aria-hidden="true" class="fas fa-tree">
+            </i>
+            <span>
+              Lingkungan Nyaman
+            </span>
+          </div>
+        </div>
       </div>
-      <div aria-label="Pengunjung Hari Ini" class="stat-item" role="listitem">
-       <div aria-atomic="true" aria-live="polite" class="stat-number" id="dayVisitors">
-        0
-       </div>
-       <div class="stat-label">
-        Hari Ini
-       </div>
+      <div aria-label="Foto Fasilitas Sekolah" class="keunggulan-slider-container" role="region">
+        <div aria-atomic="true" aria-live="polite" class="keunggulan-slider">
+          <img
+            alt="Foto fasilitas sekolah berupa ruang kelas modern dengan meja dan kursi rapi, pencahayaan alami, dan dekorasi edukatif"
+            class="slider-image active" id="slide1" loading="lazy"
+            src="https://placehold.co/280x180?text=Fasilitas+1&amp;bg=2563eb&amp;fg=ffffff" />
+          <img
+            alt="Foto fasilitas sekolah berupa laboratorium komputer dengan deretan komputer modern dan kursi ergonomis"
+            class="slider-image" id="slide2" loading="lazy"
+            src="https://placehold.co/280x180?text=Fasilitas+2&amp;bg=1e40af&amp;fg=ffffff" />
+          <img alt="Foto fasilitas sekolah berupa perpustakaan dengan rak buku lengkap dan area baca nyaman"
+            class="slider-image" id="slide3" loading="lazy"
+            src="https://placehold.co/280x180?text=Fasilitas+3&amp;bg=1e3a8a&amp;fg=ffffff" />
+          <img
+            alt="Foto fasilitas sekolah berupa lapangan olahraga luas dengan rumput hijau dan fasilitas olahraga lengkap"
+            class="slider-image" id="slide4" loading="lazy"
+            src="https://placehold.co/280x180?text=Fasilitas+4&amp;bg=2563eb&amp;fg=ffffff" />
+          <img alt="Foto fasilitas sekolah berupa ruang seni dengan lukisan dan alat musik" class="slider-image"
+            id="slide5" loading="lazy"
+            src="https://placehold.co/280x180?text=Fasilitas+5&amp;bg=1e40af&amp;fg=ffffff" />
+          <img alt="Foto fasilitas sekolah berupa ruang komputer dengan perangkat modern dan kursi ergonomis"
+            class="slider-image" id="slide6" loading="lazy"
+            src="https://placehold.co/280x180?text=Fasilitas+6&amp;bg=1e3a8a&amp;fg=ffffff" />
+        </div>
+        <button aria-label="Next slide" class="slider-arrow-button" id="nextSlideBtn" title="Next Slide" type="button">
+          &gt;
+        </button>
       </div>
-     </div>
-    </div>
-   </section>
-   <section aria-label="Keunggulan Sekolah Kami" class="keunggulan-section">
-    <div class="keunggulan-text">
-     <h2>
-      Beberapa Keunggulan Pada
-     </h2>
-     <h2>
-      Sekolah Kami
-     </h2>
-     <div class="keunggulan-icons" role="list">
-      <div aria-label="Fasilitas Lengkap" class="keunggulan-icon" role="listitem" tabindex="0">
-       <i aria-hidden="true" class="fas fa-school">
-       </i>
-       <span>
-        Fasilitas Lengkap
-       </span>
+    </section>
+    <section aria-label="Kesan dan Pesan Alumni" class="alumni-section" id="alumni">
+      <div aria-hidden="true" class="floating-icon icon-left-1" title="Graduation cap icon">
+        <i class="fas fa-graduation-cap">
+        </i>
       </div>
-      <div aria-label="Pengajar Profesional" class="keunggulan-icon" role="listitem" tabindex="0">
-       <i aria-hidden="true" class="fas fa-chalkboard-teacher">
-       </i>
-       <span>
-        Pengajar Profesional
-       </span>
+      <div aria-hidden="true" class="floating-icon icon-left-2" title="Envelope icon">
+        <i class="fas fa-envelope">
+        </i>
       </div>
-      <div aria-label="Teknologi Modern" class="keunggulan-icon" role="listitem" tabindex="0">
-       <i aria-hidden="true" class="fas fa-laptop-code">
-       </i>
-       <span>
-        Teknologi Modern
-       </span>
+      <div aria-hidden="true" class="floating-icon icon-left-3" title="Star icon">
+        <i class="fas fa-star">
+        </i>
       </div>
-      <div aria-label="Lingkungan Nyaman" class="keunggulan-icon" role="listitem" tabindex="0">
-       <i aria-hidden="true" class="fas fa-tree">
-       </i>
-       <span>
-        Lingkungan Nyaman
-       </span>
+      <div aria-hidden="true" class="floating-icon icon-right-1" title="Comments icon">
+        <i class="fas fa-comments">
+        </i>
       </div>
-     </div>
-    </div>
-    <div aria-label="Foto Fasilitas Sekolah" class="keunggulan-slider-container" role="region">
-     <div aria-atomic="true" aria-live="polite" class="keunggulan-slider">
-      <img alt="Foto fasilitas sekolah berupa ruang kelas modern dengan meja dan kursi rapi, pencahayaan alami, dan dekorasi edukatif" class="slider-image active" id="slide1" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+1&amp;bg=2563eb&amp;fg=ffffff"/>
-      <img alt="Foto fasilitas sekolah berupa laboratorium komputer dengan deretan komputer modern dan kursi ergonomis" class="slider-image" id="slide2" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+2&amp;bg=1e40af&amp;fg=ffffff"/>
-      <img alt="Foto fasilitas sekolah berupa perpustakaan dengan rak buku lengkap dan area baca nyaman" class="slider-image" id="slide3" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+3&amp;bg=1e3a8a&amp;fg=ffffff"/>
-      <img alt="Foto fasilitas sekolah berupa lapangan olahraga luas dengan rumput hijau dan fasilitas olahraga lengkap" class="slider-image" id="slide4" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+4&amp;bg=2563eb&amp;fg=ffffff"/>
-      <img alt="Foto fasilitas sekolah berupa ruang seni dengan lukisan dan alat musik" class="slider-image" id="slide5" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+5&amp;bg=1e40af&amp;fg=ffffff"/>
-      <img alt="Foto fasilitas sekolah berupa ruang komputer dengan perangkat modern dan kursi ergonomis" class="slider-image" id="slide6" loading="lazy" src="https://placehold.co/280x180?text=Fasilitas+6&amp;bg=1e3a8a&amp;fg=ffffff"/>
-     </div>
-     <button aria-label="Next slide" class="slider-arrow-button" id="nextSlideBtn" title="Next Slide" type="button">
-      &gt;
-     </button>
-    </div>
-   </section>
-   <section aria-label="Kesan dan Pesan Alumni" class="alumni-section" id="alumni">
-    <div aria-hidden="true" class="floating-icon icon-left-1" title="Graduation cap icon">
-     <i class="fas fa-graduation-cap">
-     </i>
-    </div>
-    <div aria-hidden="true" class="floating-icon icon-left-2" title="Envelope icon">
-     <i class="fas fa-envelope">
-     </i>
-    </div>
-    <div aria-hidden="true" class="floating-icon icon-left-3" title="Star icon">
-     <i class="fas fa-star">
-     </i>
-    </div>
-    <div aria-hidden="true" class="floating-icon icon-right-1" title="Comments icon">
-     <i class="fas fa-comments">
-     </i>
-    </div>
-    <div aria-hidden="true" class="floating-icon icon-right-2" title="Heart icon">
-     <i class="fas fa-heart">
-     </i>
-    </div>
-    <div aria-hidden="true" class="floating-icon icon-right-3" title="Lightbulb icon">
-     <i class="fas fa-lightbulb">
-     </i>
-    </div>
-    <div class="alumni-header">
-     <h2>
-      Kesan dan Pesan dari Alumni
-     </h2>
-     <p>
-      Mendengar langsung pengalaman dan harapan para alumni kami yang telah
+      <div aria-hidden="true" class="floating-icon icon-right-2" title="Heart icon">
+        <i class="fas fa-heart">
+        </i>
+      </div>
+      <div aria-hidden="true" class="floating-icon icon-right-3" title="Lightbulb icon">
+        <i class="fas fa-lightbulb">
+        </i>
+      </div>
+      <div class="alumni-header">
+        <h2>
+          Kesan dan Pesan dari Alumni
+        </h2>
+        <p>
+          Mendengar langsung pengalaman dan harapan para alumni kami yang telah
           menapaki dunia dengan bekal pendidikan dari SMK Wira Buana2.
-     </p>
-    </div>
-    <div class="alumni-cards" role="list">
-     <article aria-label="Kesan dan pesan dari alumni Siti Nurhaliza" class="alumni-card" role="listitem" tabindex="0">
-      <div>
-       <h3 class="alumni-name">
-        Siti Nurhaliza
-       </h3>
-       <p class="alumni-role">
-        </i>
-        Digital Marketing Specialist
-       </p>
-       <p class="alumni-message">
-        <strong>
-         Kesan:
-        </strong>
-        Lingkungan belajar yang suportif dan fasilitas
+        </p>
+      </div>
+      <div class="alumni-cards" role="list">
+        <article aria-label="Kesan dan pesan dari alumni Siti Nurhaliza" class="alumni-card" role="listitem"
+          tabindex="0">
+          <div>
+            <h3 class="alumni-name">
+              Siti Nurhaliza
+            </h3>
+            <p class="alumni-role">
+              </i>
+              Digital Marketing Specialist
+            </p>
+            <p class="alumni-message">
+              <strong>
+                Kesan:
+              </strong>
+              Lingkungan belajar yang suportif dan fasilitas
               lengkap membuat saya siap menghadapi tantangan dunia kerja.
-        <br/>
-        <strong>
-         Pesan:
-        </strong>
-        Manfaatkan setiap kesempatan belajar dan jangan
+              <br />
+              <strong>
+                Pesan:
+              </strong>
+              Manfaatkan setiap kesempatan belajar dan jangan
               takut mencoba hal baru.
-       </p>
-      </div>
-     </article>
-     <article aria-label="Kesan dan pesan dari alumni Ahmad Fauzi" class="alumni-card" role="listitem" tabindex="0">
-      <div>
-       <h3 class="alumni-name">
-        Ahmad Fauzi
-       </h3>
-       <p class="alumni-role">
-        </i>
-        Software Engineer
-       </p>
-       <p class="alumni-message">
-        <strong>
-         Kesan:
-        </strong>
-        Sekolah ini memberikan pengalaman praktis yang sangat berguna
+            </p>
+          </div>
+        </article>
+        <article aria-label="Kesan dan pesan dari alumni Ahmad Fauzi" class="alumni-card" role="listitem" tabindex="0">
+          <div>
+            <h3 class="alumni-name">
+              Ahmad Fauzi
+            </h3>
+            <p class="alumni-role">
+              </i>
+              Software Engineer
+            </p>
+            <p class="alumni-message">
+              <strong>
+                Kesan:
+              </strong>
+              Sekolah ini memberikan pengalaman praktis yang sangat berguna
               dalam dunia kerja.
-        <br/>
-        <strong>
-         Pesan:
-        </strong>
-        Teruslah belajar dan jangan takut untuk berinovasi.
-       </p>
+              <br />
+              <strong>
+                Pesan:
+              </strong>
+              Teruslah belajar dan jangan takut untuk berinovasi.
+            </p>
+          </div>
+        </article>
+        <article aria-label="Kesan dan pesan dari alumni Lina Marlina" class="alumni-card" role="listitem" tabindex="0">
+          <div>
+            <h3 class="alumni-name">
+              Lina Marlina
+            </h3>
+            <p class="alumni-role">
+              </i>
+              Entrepreneur
+            </p>
+            <p class="alumni-message">
+              <strong>
+                Kesan:
+              </strong>
+              Lingkungan yang mendukung kreativitas dan pengembangan diri.
+              <br />
+              <strong>
+                Pesan:
+              </strong>
+              Jangan ragu untuk memulai usaha dan terus kembangkan potensi diri.
+            </p>
+          </div>
+        </article>
       </div>
-     </article>
-     <article aria-label="Kesan dan pesan dari alumni Lina Marlina" class="alumni-card" role="listitem" tabindex="0">
-      <div>
-       <h3 class="alumni-name">
-        Lina Marlina
-       </h3>
-       <p class="alumni-role">
-        </i>
-        Entrepreneur
-       </p>
-       <p class="alumni-message">
-        <strong>
-         Kesan:
-        </strong>
-        Lingkungan yang mendukung kreativitas dan pengembangan diri.
-        <br/>
-        <strong>
-         Pesan:
-        </strong>
-        Jangan ragu untuk memulai usaha dan terus kembangkan potensi diri.
-       </p>
-      </div>
-     </article>
-    </div>
-   </section>
+    </section>
   </main>
   <footer>
-   <div class="footer-container">
-    <div aria-label="Logo and description" class="footer-left">
-     <div class="footer-logo">
-      <img alt="Logo SMK Wira Buana 2, square blue background with white text 'Logo'" height="65" src="logowb2.png" width="65"/>
-      <span class="footer-logo-text">
-       SMK Wira Buana 2
-      </span>
-     </div>
-     <div class="footer-description">
-      Website resmi sekolah unggulan berbasis karakter dan teknologi
-     </div>
-     <div style="border-radius: 5px; background-color: white;">
-      <img alt="Logos of Jagoan Hosting, Komdigi, 1000 Startup Digital, and Maspion IT in a horizontal row" src="Logo Jagoan Hosting, Komdigi, 1000 Startup Digital, dan Maspion IT.png"/>
-     </div>
+    <div class="footer-container">
+      <div aria-label="Logo and description" class="footer-left">
+        <div class="footer-logo">
+          <img alt="Logo SMK Wira Buana 2, square blue background with white text 'Logo'" height="65" src="logowb2.png"
+            width="65" />
+          <span class="footer-logo-text">
+            SMK Wira Buana 2
+          </span>
+        </div>
+        <div class="footer-description">
+          Website resmi sekolah unggulan berbasis karakter dan teknologi
+        </div>
+        <div style="border-radius: 5px; background-color: white;">
+          <img alt="Logos of Jagoan Hosting, Komdigi, 1000 Startup Digital, and Maspion IT in a horizontal row"
+            src="Logo Jagoan Hosting, Komdigi, 1000 Startup Digital, dan Maspion IT.png" />
+        </div>
+      </div>
+      <div aria-label="Jam operasional sekolah" class="footer-schedule">
+        <h3>
+          Jam Operasional
+        </h3>
+        <dl>
+          <dt>
+            Senin
+          </dt>
+          <dd>
+            08:00 - 16:00
+          </dd>
+          <dt>
+            Selasa
+          </dt>
+          <dd>
+            08:00 - 16:00
+          </dd>
+          <dt>
+            Rabu
+          </dt>
+          <dd>
+            08:00 - 16:00
+          </dd>
+          <dt>
+            Kamis
+          </dt>
+          <dd>
+            08:00 - 16:00
+          </dd>
+          <dt>
+            Jumat
+          </dt>
+          <dd>
+            08:00 - 16:00
+          </dd>
+          <dt>
+            Sabtu
+          </dt>
+          <dd>
+            08:00 - 12:00
+          </dd>
+          <dt>
+            Minggu
+          </dt>
+          <dd>
+            Tutup
+          </dd>
+        </dl>
+      </div>
+      <nav aria-label="Social media links" class="footer-social">
+        <a aria-label="Instagram" href="https://www.instagram.com/smkwirabuana2" rel="noopener noreferrer"
+          target="_blank" title="Instagram">
+          <i aria-hidden="true" class="fab fa-instagram">
+          </i>
+        </a>
+        <a aria-label="WhatsApp" href="https://wa.me/6281234567890" rel="noopener noreferrer" target="_blank"
+          title="WhatsApp">
+          <i aria-hidden="true" class="fab fa-whatsapp">
+          </i>
+        </a>
+        <a aria-label="TikTok" href="https://www.tiktok.com/@smkwirabuana2" rel="noopener noreferrer" target="_blank"
+          title="TikTok">
+          <i aria-hidden="true" class="fab fa-tiktok">
+          </i>
+        </a>
+        <a aria-label="Email" href="mailto:info@smkwirabuana2.sch.id" title="Email">
+          <i aria-hidden="true" class="fas fa-envelope">
+          </i>
+        </a>
+      </nav>
     </div>
-    <div aria-label="Jam operasional sekolah" class="footer-schedule">
-     <h3>
-      Jam Operasional
-     </h3>
-     <dl>
-      <dt>
-       Senin
-      </dt>
-      <dd>
-       08:00 - 16:00
-      </dd>
-      <dt>
-       Selasa
-      </dt>
-      <dd>
-       08:00 - 16:00
-      </dd>
-      <dt>
-       Rabu
-      </dt>
-      <dd>
-       08:00 - 16:00
-      </dd>
-      <dt>
-       Kamis
-      </dt>
-      <dd>
-       08:00 - 16:00
-      </dd>
-      <dt>
-       Jumat
-      </dt>
-      <dd>
-       08:00 - 16:00
-      </dd>
-      <dt>
-       Sabtu
-      </dt>
-      <dd>
-       08:00 - 12:00
-      </dd>
-      <dt>
-       Minggu
-      </dt>
-      <dd>
-       Tutup
-      </dd>
-     </dl>
+    <div class="footer-copy">
+      © 2024 SMK Wira Buana 2. All rights reserved.
     </div>
-    <nav aria-label="Social media links" class="footer-social">
-     <a aria-label="Instagram" href="https://www.instagram.com/smkwirabuana2" rel="noopener noreferrer" target="_blank" title="Instagram">
-      <i aria-hidden="true" class="fab fa-instagram">
-      </i>
-     </a>
-     <a aria-label="WhatsApp" href="https://wa.me/6281234567890" rel="noopener noreferrer" target="_blank" title="WhatsApp">
-      <i aria-hidden="true" class="fab fa-whatsapp">
-      </i>
-     </a>
-     <a aria-label="TikTok" href="https://www.tiktok.com/@smkwirabuana2" rel="noopener noreferrer" target="_blank" title="TikTok">
-      <i aria-hidden="true" class="fab fa-tiktok">
-      </i>
-     </a>
-     <a aria-label="Email" href="mailto:info@smkwirabuana2.sch.id" title="Email">
-      <i aria-hidden="true" class="fas fa-envelope">
-      </i>
-     </a>
-    </nav>
-   </div>
-   <div class="footer-copy">
-    © 2024 SMK Wira Buana 2. All rights reserved.
-   </div>
   </footer>
   <script>
-   function animateCountUp(element, target, duration) {
+    function animateCountUp(element, target, duration) {
       let start = 0;
       const stepTime = Math.max(Math.floor(duration / target), 20);
       const startTime = performance.now();
@@ -1392,82 +1454,7 @@
       requestAnimationFrame(update);
     }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const stats = {
-    total: 0,
-    year: 0,
-    month: 0,
-    day: 0,
-    lastClickDate: null
-  };
-
-  const today = new Date();
-  const todayStr = today.toISOString().split("T")[0]; // format YYYY-MM-DD
-  const thisMonth = today.getMonth();
-  const thisYear = today.getFullYear();
-
-  // Ambil data dari localStorage kalau ada
-  const saved = JSON.parse(localStorage.getItem("visitorStats"));
-  if (saved) {
-    // Reset otomatis jika ganti tahun/bulan/hari
-    if (saved.yearDate !== thisYear) {
-      saved.year = 0;
-      saved.yearDate = thisYear;
-    }
-    if (saved.monthDate !== `${thisMonth}-${thisYear}`) {
-      saved.month = 0;
-      saved.monthDate = `${thisMonth}-${thisYear}`;
-    }
-    if (saved.dayDate !== todayStr) {
-      saved.day = 0;
-      saved.dayDate = todayStr;
-      saved.clickedToday = false; // reset klik harian
-    }
-    Object.assign(stats, saved);
-  } else {
-    stats.yearDate = thisYear;
-    stats.monthDate = `${thisMonth}-${thisYear}`;
-    stats.dayDate = todayStr;
-    stats.clickedToday = false;
-  }
-
-  // Update tampilan awal
-  document.getElementById("totalVisitors").textContent = stats.total;
-  document.getElementById("yearVisitors").textContent = stats.year;
-  document.getElementById("monthVisitors").textContent = stats.month;
-  document.getElementById("dayVisitors").textContent = stats.day;
-
-  // Fungsi simpan ke localStorage
-  function saveStats() {
-    localStorage.setItem("visitorStats", JSON.stringify(stats));
-  }
-
-  // Saat klik link, tambah visitor
-  document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      if (!stats.clickedToday) {
-        stats.total++;
-        stats.year++;
-        stats.month++;
-        stats.day++;
-        stats.clickedToday = true;
-        stats.lastClickDate = todayStr;
-
-        // Update tampilan
-        document.getElementById("totalVisitors").textContent = stats.total;
-        document.getElementById("yearVisitors").textContent = stats.year;
-        document.getElementById("monthVisitors").textContent = stats.month;
-        document.getElementById("dayVisitors").textContent = stats.day;
-
-        // Simpan
-        saveStats();
-      }
-    });
-  });
-
-  // Simpan awal kalau data baru
-  saveStats();
-});
+    const visitorData = { total: 123457, year: 500, month: 3456, day: 456, };
 
     window.addEventListener("DOMContentLoaded", () => {
       animateCountUp(
@@ -1529,5 +1516,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resetInterval();
   </script>
- </body>
+</body>
+
 </html>
